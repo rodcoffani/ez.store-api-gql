@@ -1,0 +1,42 @@
+type User {
+    id: ID!
+    name: String
+    email: String
+    password_hash: String
+    avatar: String
+    inserted_at: String!
+    updated_at: String!
+    wallet: Wallet
+    donations_received: [Donation]
+    donations_sent: [Donation]
+};
+
+type Wallet {
+    id: ID!
+    to_offer: Int
+    received: Int
+    balance: Int
+    owner_user_id: ID
+    inserted_at: String!
+    updated_at: String!
+};
+
+type Donation {
+    id: ID!
+    quantity: Int
+    reason: String
+    sender_user_id: ID
+    receiver_user_id: ID
+    donate_at: String!
+    inserted_at: String!
+    updated_at: String!
+};
+
+type Query {
+    users: [User]!
+    user(id: ID!): User
+    wallets: [Wallet]!
+    wallet: Wallet
+    donations: [Donation]!
+    donation: Donation
+}
