@@ -14,18 +14,18 @@ async function main() {
         },
     });
     
-    // await app.register({
-    //     plugin: graphqlHapi,
-    //     options: {
-    //       path: '/graphql',
-    //       graphqlOptions: {
-    //         schema: myGraphQLSchema,
-    //       },
-    //       route: {
-    //         cors: true,
-    //       },
-    //     },
-    //   });
+    await app.register({
+        plugin: graphqlHapi,
+        options: {
+          path: '/graphql',
+          graphqlOptions: {
+            schema: myGraphQLSchema,
+          },
+          route: {
+            cors: true,
+          },
+        },
+      });
 
     await app.start();
     console.log('Server on port ', app.info.port);

@@ -1,3 +1,10 @@
+require('dotenv').config();
+const pgp = require('pg-promise');
+
+const db ={}
+const connectionString = process.env.DATABASE_URL;
+db.conn = pgp(connectionString);
+
 module.exports = {
     Query: {
         users: (parent, args) => {
