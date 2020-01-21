@@ -16,8 +16,7 @@
     "easygraphql-tester": "^5.1.6",
     "graphql": "^14.5.8",
     "graphql-yoga": "^1.18.3",
-    "pg": "^7.17.1",
-    "pg-promise": "^10.3.5"
+    "pg": "^7.17.1"
   },
   "devDependencies": {
     "mocha": "^7.0.0",
