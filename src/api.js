@@ -4,10 +4,17 @@ const {
 
 const typeDefs = 'src/db/schemas/schema.graphql';
 const resolvers = require('./db/resolvers/resolvers');
+const UsersAPI = require('./db/datasources/datasource');
+
+const database = require('./configs/db');
+database.connect();
 
 const app = new GraphQLServer({
     typeDefs,
-    resolvers
+    resolvers,
+    dataSources: () => ({
+        usersAPI: new UsersAPI({ database })
+    })
 });
 
 app

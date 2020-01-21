@@ -36,8 +36,8 @@ type Query {
     users: [User]
     user(id: ID!): User
     wallets: [Wallet]
-    wallet: Wallet
+    wallet(id: ID!): Wallet
     donations: [Donation]
-    donation: Donation
+    donation(id: ID!): Donation
     teste: String
 }
