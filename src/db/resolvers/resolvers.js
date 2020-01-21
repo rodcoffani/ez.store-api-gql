@@ -1,8 +1,23 @@
 require('dotenv').config();
-const pgp = require('pg-promise');
+const options = {
+    error: function(error, e) {
+        if(e.cn) {
+            console.log('CN:', e.cn);
+            console.log('EVENT:', error.message);
+        }
+    }
+}
+const pgp = require('pg-promise')(options);
 
 const db ={}
-const connectionString = process.env.DATABASE_URL;
+// const connectionString = process.env.DATABASE_URL;
+const connectionString = {
+    host: 'localhost',
+    port: 5432,
+    database: 'ez_coins_api_dev',
+    user: 'postgres',
+    password: 'postgres'
+};
 db.conn = pgp(connectionString);
 
 module.exports = {
@@ -66,6 +81,7 @@ module.exports = {
                 .catch(err => {
                     return 'Error! The error is ', err;
                 });
-        }
+        },
+        teste: () => 'Aqui é só pra testar'
     }
 };

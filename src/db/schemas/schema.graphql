@@ -9,7 +9,7 @@ type User {
     wallet: Wallet
     donations_received: [Donation]
     donations_sent: [Donation]
-};
+}
 
 type Wallet {
     id: ID!
@@ -19,7 +19,7 @@ type Wallet {
     owner_user_id: ID
     inserted_at: String!
     updated_at: String!
-};
+}
 
 type Donation {
     id: ID!
@@ -30,13 +30,14 @@ type Donation {
     donate_at: String!
     inserted_at: String!
     updated_at: String!
-};
+}
 
 type Query {
-    users: [User]!
+    users: [User]
     user(id: ID!): User
-    wallets: [Wallet]!
+    wallets: [Wallet]
     wallet: Wallet
-    donations: [Donation]!
+    donations: [Donation]
     donation: Donation
+    teste: String
 }

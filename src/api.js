@@ -1,36 +1,17 @@
-const Hapi = require('hapi');
-const { graphqlHapi } = require('apollo-server-hapi');
+const {
+    GraphQLServer
+} = require('graphql-yoga');
 
-const app = Hapi.Server({
-    port: 2000
+const typeDefs = './src/db/postgres/schemas/schema.graphql'
+const resolvers = './src/db/postgres/resolvers/resolvers.js'
+
+const app = new GraphQLServer({
+    typeDefs,
+    resolvers
 });
 
-async function main() {
-    app.route({
-        method: 'GET',
-        path: '/',
-        handler: (request, h) => {
-            return 'Hello World!';
-        },
-    });
-    
-    // await app.register({
-    //     plugin: graphqlHapi,
-    //     options: {
-    //       path: '/graphql',
-    //       graphqlOptions: {
-    //         schema: myGraphQLSchema,
-    //       },
-    //       route: {
-    //         cors: true,
-    //       },
-    //     },
-    //   });
-
-    await app.start();
-    console.log('Server on port ', app.info.port);
-    
-    return app;
-}
-
-module.exports = main();
+app
+    .start(() => console.log('Server running on port', app.options.port))
+    .catch(
+        err => console.log(`Something went wrong while starting server: ${err}`)
+    );
