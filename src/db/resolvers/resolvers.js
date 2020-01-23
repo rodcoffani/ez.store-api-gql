@@ -10,9 +10,9 @@ module.exports = {
                     return 'Error! The error is ', err;
                 });
         },
-        user: (parent, args, { db }) => {
+        user: (parent, { id }, { db }) => {
             const query = `SELECT * FROM users WHERE id = $1`;
-            return db.query(query, [args.id])
+            return db.query(query, [id])
                 .then(data => {
                     return data.rows[0];
                 })
@@ -30,9 +30,9 @@ module.exports = {
                     return 'Error! The error is ', err;
                 });
         },
-        wallet: (parent, args, { db }) => {
+        wallet: (parent, { id }, { db }) => {
             const query = `SELECT * FROM wallets WHERE id = $1`;
-            return db.query(query, [args.id])
+            return db.query(query, [id])
                 .then(data => {
                     return data.rows[0];
                 })
@@ -50,9 +50,9 @@ module.exports = {
                     return 'Error! The error is ', err;
                 });
         },
-        donation: (parent, args, { db }) => {
+        donation: (parent, { id }, { db }) => {
             const query = `SELECT * FROM donations WHERE id = $1`;
-            return db.query(query, [args.id])
+            return db.query(query, [id])
                 .then(data => {
                     return data.rows[0];
                 })
