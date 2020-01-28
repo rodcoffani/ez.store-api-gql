@@ -60,5 +60,37 @@ module.exports = {
                     return 'Error! The error is ', err;
                 });
         },
+    },
+    User: {
+        wallet: ( { id } , args, { db }) => {
+            const query = `SELECT * FROM wallets WHERE owner_user_id = $1`;
+            return db.query(query, [id])
+                .then(data => {
+                    return data.rows[0];
+                })
+                .catch(err => {
+                    return 'Error! The error is ', err;
+                });
+        },
+        donations_received: ( { id } , args, { db }) => {
+            const query = `SELECT * FROM donations WHERE receiver_user_id = $1`;
+            return db.query(query, [id])
+                .then(data => {
+                    return data.rows;
+                })
+                .catch(err => {
+                    return 'Error! The error is ', err;
+                });
+        },
+        donations_sent: ( { id } , args, { db }) => {
+            const query = `SELECT * FROM donations WHERE sender_user_id = $1`;
+            return db.query(query, [id])
+                .then(data => {
+                    return data.rows;
+                })
+                .catch(err => {
+                    return 'Error! The error is ', err;
+                });
+        },
     }
 };
