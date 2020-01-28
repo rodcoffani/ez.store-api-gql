@@ -13,12 +13,12 @@
   "dependencies": {
     "apollo-datasource": "^0.6.4",
     "dotenv": "^8.2.0",
-    "easygraphql-tester": "^5.1.6",
     "graphql": "^14.5.8",
     "graphql-yoga": "^1.18.3",
     "pg": "^7.17.1"
   },
   "devDependencies": {
+    "easygraphql-tester": "^5.1.6",
     "mocha": "^7.0.0",
     "nodemon": "^2.0.2"
   }
