@@ -53,6 +53,5 @@ describe("Testing schema", () => {
         const { data: { users }} = await tester.graphql(query, undefined, { db }, undefined);
         const result = users.length;
         assert.ok(result >= 20);
-        console.log(result);
     });
 });
