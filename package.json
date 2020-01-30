@@ -18,6 +18,7 @@
     "pg": "^7.17.1"
   },
   "devDependencies": {
+    "easygraphql-tester": "^5.1.6",
     "mocha": "^7.0.0",
     "nodemon": "^2.0.2"
   }
