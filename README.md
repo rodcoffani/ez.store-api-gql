@@ -3,7 +3,7 @@
 This is an update of the [ez.store-api](https://github.com/rodcoffani/ez.store-api) using GraphQL concepts and syntax.
 
 ## Dependencies
-Install the dependencies using `yarn` or `npm i`\
+Install the dependencies using `yarn` or `npm i`
 * Dependencies:
   - apollo-datasource: ^0.6.4,
   - dotenv: ^8.2.0,
@@ -21,7 +21,7 @@ Install the dependencies using `yarn` or `npm i`\
 
 ## Running the project
 To initialize the project, run the `start` command.\
-To run all the tests, run the `test` command. \
+To run all the tests, run the `test` command. 
 
   `"start": "nodemon src/api.js",`\
   `"test": "mocha src/tests/*.js"`
