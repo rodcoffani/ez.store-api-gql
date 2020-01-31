@@ -39,5 +39,8 @@ type Query {
     wallet(id: ID!): Wallet
     donations: [Donation]
     donation(id: ID!): Donation
-    teste: String
+}
+
+type Mutation {
+    purchase(owner_user_id: Int, value: Int): Wallet
 }
