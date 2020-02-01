@@ -58,6 +58,6 @@ describe("Testing schema", () => {
             }
         }
         `;
-        const mockedResult = tester.mock(gql);
+        tester.mock(gql);
     });
 });
